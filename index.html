@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Mart - Gens Dress Shop</title>
+    <meta name="description" content="Friendship Mart - Your destination for elegant and modern dresses.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f2937', /* Gray 800 - Deep Charcoal */
+                        secondary: '#374151', /* Gray 700 */
+                        accent: '#fce7f3', /* Pink 100 - Blush Pink */
+                        accentDark: '#fbcfe8', /* Pink 200 */
+                        brand: '#be185d', /* Pink 700 - For buttons/highlights */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary tracking-tight">Friendship Mart</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#new-arrivals" class="text-secondary hover:text-brand transition-colors font-medium">New Arrivals</a>
+                    <a href="#about" class="text-secondary hover:text-brand transition-colors font-medium">About</a>
+                    <a href="#gallery" class="text-secondary hover:text-brand transition-colors font-medium">Shop</a>
+                    <a href="#contact" class="text-secondary hover:text-brand transition-colors font-medium">Contact</a>
+                    <a href="#gallery" class="bg-primary text-white px-5 py-2 rounded-full hover:bg-gray-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">Shop Now</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#new-arrivals" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-accent transition-colors">New Arrivals</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-accent transition-colors">About</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-accent transition-colors">Shop</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-accent to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight tracking-tight animate-fade-in-up">
+                    Elegance for Every Occasion
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed animate-fade-in-up delay-100">
+                    Discover the latest trends in fashion at Friendship Mart. Curated styles that define your unique personality.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
+                    <a href="#new-arrivals" class="px-8 py-3 bg-primary text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:bg-gray-800 transition-all transform hover:-translate-y-1">
+                        Shop New Arrivals
+                    </a>
+                    <a href="#about" class="px-8 py-3 bg-white text-primary border border-gray-200 rounded-full font-semibold shadow-sm hover:shadow-md hover:bg-gray-50 transition-all">
+                        Our Story
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand font-semibold tracking-wider uppercase text-sm">Fresh Drops</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">New Arrivals</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Floral Summer Dress" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button class="w-full bg-white text-primary py-2 rounded-lg font-medium hover:bg-accent transition-colors">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Floral Summer Dress</h3>
+                        <p class="text-sm text-gray-500">Casual</p>
+                        <p class="text-brand font-bold mt-1">$49.99</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Velvet Evening Gown" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button class="w-full bg-white text-primary py-2 rounded-lg font-medium hover:bg-accent transition-colors">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Velvet Evening Gown</h3>
+                        <p class="text-sm text-gray-500">Formal</p>
+                        <p class="text-brand font-bold mt-1">$129.99</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chic Midi Dress" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button class="w-full bg-white text-primary py-2 rounded-lg font-medium hover:bg-accent transition-colors">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Chic Midi Dress</h3>
+                        <p class="text-sm text-gray-500">Workwear</p>
+                        <p class="text-brand font-bold mt-1">$79.99</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Boho Maxi Dress" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button class="w-full bg-white text-primary py-2 rounded-lg font-medium hover:bg-accent transition-colors">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Boho Maxi Dress</h3>
+                        <p class="text-sm text-gray-500">Casual</p>
+                        <p class="text-brand font-bold mt-1">$65.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-accent/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About Friendship Mart" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <span class="text-brand font-semibold tracking-wider uppercase text-sm">Our Story</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2 mb-6">Welcome to Friendship Mart</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        At Friendship Mart (Gens Dress Shop), we believe that fashion is more than just clothing—it's an expression of who you are. Founded on the principles of elegance, quality, and community, we strive to bring you the finest selection of dresses for every moment of your life.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Whether you're looking for a casual summer outfit or a stunning evening gown, our curated collection is designed to make you feel confident and beautiful.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-brand transition-colors inline-flex items-center">
+                        Get in Touch
+                        <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Gallery Section -->
+    <section id="gallery" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand font-semibold tracking-wider uppercase text-sm">Collection</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Shop All</h2>
+            </div>
+
+            <!-- Filters (Visual Only for now) -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="px-6 py-2 rounded-full bg-primary text-white shadow-md">All</button>
+                <button class="px-6 py-2 rounded-full bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition-colors">Casual</button>
+                <button class="px-6 py-2 rounded-full bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition-colors">Formal</button>
+                <button class="px-6 py-2 rounded-full bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition-colors">Accessories</button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Repeat Product Cards (8 items for gallery) -->
+                <!-- Item 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Silk Wrap Dress</h3>
+                        <p class="text-brand font-bold mt-1">$89.99</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1549833284-6a7df91c1f65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Cocktail Mini</h3>
+                        <p class="text-brand font-bold mt-1">$59.99</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1596783074918-c84cb06531ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Autumn Knit</h3>
+                        <p class="text-brand font-bold mt-1">$75.00</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1612336307429-8a898d10e223?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Lace Detail Dress</h3>
+                        <p class="text-brand font-bold mt-1">$95.00</p>
+                    </div>
+                </div>
+                 <!-- Item 5 -->
+                 <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Classic Black</h3>
+                        <p class="text-brand font-bold mt-1">$110.00</p>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Summer Breeze</h3>
+                        <p class="text-brand font-bold mt-1">$55.00</p>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Elegant White</h3>
+                        <p class="text-brand font-bold mt-1">$105.00</p>
+                    </div>
+                </div>
+                <!-- Item 8 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-sm group-hover:shadow-xl transition-all duration-300 aspect-[3/4] bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1550614000-4b9519e02a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold text-primary">Party Sparkle</h3>
+                        <p class="text-brand font-bold mt-1">$135.00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 border border-gray-300 rounded-full text-gray-600 font-medium hover:bg-gray-50 transition-colors">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand font-semibold tracking-wider uppercase text-sm">Get in Touch</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Contact Us</h2>
+                <p class="text-gray-600 mt-4">Have questions? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Friendship Mart</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Your one-stop destination for elegant, modern, and high-quality dresses. We bring fashion to your doorstep.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#new-arrivals" class="text-gray-400 hover:text-white transition-colors">New Arrivals</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Shop</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <!-- Social Placeholders -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.072 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Email: hello@friendshipmart.com</p>
+                    <p class="text-gray-400">Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 Friendship Mart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
