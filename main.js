@@ -1,10 +1,10 @@
 // Main JavaScript
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- Sticky Header Logic ---
     const navbar = document.getElementById('navbar');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
             navbar.classList.add('shadow-md');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('bg-white/95');
             navbar.classList.add('bg-white/90');
         }
-    });
+    }, { passive: true });
 
     // --- Mobile Menu Toggle ---
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Offset for fixed header
-                const headerOffset = 64; 
+                const headerOffset = 64;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
